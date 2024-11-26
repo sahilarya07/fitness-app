@@ -47,18 +47,14 @@ app.use('/calorie', (req, res, next) => {
 app.use('/calorie', calorieRoutes);
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/Pollos', { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true 
-})
-.then(() => {
-    console.log('MongoDB connected successfully');
-})
-.catch(err => {
-    console.error('MongoDB connection error:', err);
-    process.exit(1); // Exit if database connection fails
-});
-
+mongoose.connect('mongodb+srv://newuser:newuser@cluster0.ffpaa.mongodb.net/Pollos')
+    .then(() => {
+        console.log('MongoDB connected successfully to Atlas');
+    })
+    .catch(err => {
+        console.error('MongoDB connection error:', err);
+        process.exit(1); // Exit if database connection fails
+    });
 // Add this to monitor DB connection
 mongoose.connection.on('error', err => {
     console.error('MongoDB connection error:', err);
