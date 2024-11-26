@@ -22,7 +22,7 @@ const app = express();
 const PORT = 3000;
 
 // Set your SendGrid API Key
-sendgridMail.setApiKey('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');
+sendgridMail.setApiKey('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');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
